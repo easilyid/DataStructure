@@ -1,6 +1,8 @@
 ﻿namespace DataStructure.DataStructure.LinkedList;
 
-//双向循环链表
+/// <summary>
+/// 双向循环链表
+/// </summary>
 public class DataDoublyCircularLinkedList<T>
 {
     public class Node<T>

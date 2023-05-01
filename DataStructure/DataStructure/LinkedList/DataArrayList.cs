@@ -1,5 +1,9 @@
 ﻿namespace DataStructure.DataStructure.LinkedList;
 
+/// <summary>
+/// 动态数组
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public class DataArrayList<T>
 {
     private T[] _arr;

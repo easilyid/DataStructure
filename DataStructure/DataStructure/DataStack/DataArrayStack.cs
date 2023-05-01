@@ -1,4 +1,4 @@
-﻿namespace DataStructure.DataStructure.DataStack.Array;
+﻿namespace DataStructure.DataStructure.DataStack;
 
 /// <summary>
 /// 基于数组的栈

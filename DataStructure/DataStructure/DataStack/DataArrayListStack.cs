@@ -1,4 +1,4 @@
-﻿namespace DataStructure.DataStructure.DataStack.Array;
+﻿namespace DataStructure.DataStructure.DataStack;
 
 /// <summary>
 /// 动态数组实现的栈
