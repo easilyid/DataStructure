@@ -4,7 +4,7 @@ public class _37_SolveSudoku
 {
     public void SolveSudoku(char[][] board)
     {
-        bool[,] rows = new bool[9, 10];//行 列 盒子(3X3)方块
+        bool[,] rows = new bool[9, 10];//行 列 盒子(3X3)方块 第二个是值的 数字是1-9，所以取10
         bool[,] cols = new bool[9, 10];
         bool[,,] boxs = new bool[3, 3, 10];
 
