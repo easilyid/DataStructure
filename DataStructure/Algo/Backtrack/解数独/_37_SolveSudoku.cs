@@ -4,6 +4,7 @@ public class _37_SolveSudoku
 {
     public void SolveSudoku(char[][] board)
     {
+        //用于记录数独中每一行、每一列和每个 3x3 方块中数字的使用情况
         bool[,] rows = new bool[9, 10];//行 列 盒子(3X3)方块 第二个是值的 数字是1-9，所以取10
         bool[,] cols = new bool[9, 10];
         bool[,,] boxs = new bool[3, 3, 10];
@@ -28,12 +29,8 @@ public class _37_SolveSudoku
     {
         if (col == board[0].Length)
         {//如果到达最后一列，将行+1.列重置
-            row++; //下一列
-            col = 0;
-            if (row == board.Length)
-            {//到最后一行了就说明找到解了
-                return true;
-            }
+            row++; //下一列col = 0;
+            if (row == board.Length) return true;//到最后一行了就说明找到解了
         }
         //尝试填充数字
         if (board[row][col] == '.')
@@ -45,10 +42,8 @@ public class _37_SolveSudoku
                 if (canplace)
                 {
                     Place(board, row, col, rows, cols, boxs, num);
-                    if (backtrack(board, row, col + 1, rows, cols, boxs))
-                    {//填完继续下一个位置
-                        return true;
-                    }
+                    //填完继续下一个位置
+                    if (backtrack(board, row, col + 1, rows, cols, boxs)) return true;
                     //如果下一个位置是false 就回溯
                     back(board, row, col, rows, cols, boxs, num);
                 }
@@ -68,6 +63,7 @@ public class _37_SolveSudoku
         rows[row, num] = true;
         cols[col, num] = true;
         boxs[row / 3, col / 3, num] = true;
+        //填充这个位置
         board[row][col] = (char)('0' + num);
     }
 
